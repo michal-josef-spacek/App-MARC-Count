@@ -21,7 +21,6 @@ readme_from 'bin/marc-count';
 recursive_author_tests('xt');
 requires 'Class::Utils' => 0;
 requires 'English' => 0;
-requires 'Error::Pure' => 0;
 requires 'Getopt::Std' => 0;
 requires 'MARC::File::XML' => 0;
 requires 'Unicode::UTF8' => 0;

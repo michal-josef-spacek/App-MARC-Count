@@ -5,7 +5,6 @@ use warnings;
 
 use Class::Utils qw(set_params);
 use English;
-use Error::Pure qw(err);
 use Getopt::Std;
 use MARC::File::XML (BinaryEncoding => 'utf8', RecordFormat => 'MARC21');
 use Unicode::UTF8 qw(encode_utf8);
@@ -278,7 +277,6 @@ Returns 1 for error, 0 for success.
 
 L<Class::Utils>,
 L<English>,
-L<Error::Pure>,
 L<Getopt::Std>,
 L<MARC::File::XML>,
 L<Unicode::UTF8>.
