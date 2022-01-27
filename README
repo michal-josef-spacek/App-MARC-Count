@@ -1,0 +1,63 @@
+NAME
+    marc-list - Script to fetch module from CPAN archive.
+
+SYNOPSIS
+     marc-list [-h] [--version] module_name[module_version]
+
+DESCRIPTION
+    Vision of this module is:
+
+     * intuitive name for script which fetching module from CPAN
+     * intuitive caching mechanism (switch for source)
+     * simple dependencies to modules, which doing one thing (not CPAN module) SIC!
+     * testable and tested distribution
+
+ARGUMENTS
+    *       "-h"
+
+             Print help.
+
+    *       "--version"
+
+             Print version of script.
+
+    *       "module_name"
+
+             Perl module name.
+             e.g. App::Pod::Example
+
+    *       "module_version"
+
+            Perl module version. There are some posibilities how to define:
+
+             @module_version (e.g. @1.23)
+             - Define exact module version.
+
+             ~module_version (e.g. ~1.23)
+             - Define version and later.
+
+             ~"== module_version" (e.g. ~"== 1.23")
+             - Define exact module version.
+
+             ~">= module_version_min, < module_version_max" (e.g. ~">= 1.23, < 2.00")
+             - Define limit. (e.g. last version in 1.xx branch)
+
+EXAMPLE
+     marc-xml2json __MARC.xml__
+
+REPOSITORY
+    <https://github.com/michal-josef-spacek/App-MARC-List>
+
+AUTHOR
+    Michal Josef Špaček <mailto:skim@cpan.org>
+
+    <http://skim.cz>
+
+LICENSE AND COPYRIGHT
+    © 2022 Michal Josef Špaček
+
+    BSD 2-Clause License
+
+VERSION
+    0.01
+
