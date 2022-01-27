@@ -22,5 +22,6 @@ META.yml
 README
 t/App-MARC-Count/01-use.t
 t/App-MARC-Count/02-version.t
+t/App-MARC-Count/03-new.t
 xt/App-MARC-Count/01-pod_coverage.t
 xt/App-MARC-Count/02-pod.t
