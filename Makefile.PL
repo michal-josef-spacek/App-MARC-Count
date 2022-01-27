@@ -25,6 +25,8 @@ requires 'Getopt::Std' => 0;
 resources 'bugtracker' => 'https://github.com/michal-josef-spacek/App-MARC-Count/issues',
 resources 'homepage' => 'https://github.com/michal-josef-spacek/App-MARC-Count';
 resources 'repository' => 'git://github.com/michal-josef-spacek/App-MARC-Count';
+test_requires 'English' => 0;
+test_requires 'Error::Pure::Utils' => 0;
 test_requires 'Test::More' => 0;
 test_requires 'Test::NoWarnings' => 0;
 tests_recursive;
