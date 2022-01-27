@@ -24,20 +24,15 @@ __END__
 
 =head1 NAME
 
-marc-list - Script to fetch module from CPAN archive.
+marc-count - Script to count records in MARC file.
 
 =head1 SYNOPSIS
 
- marc-list [-h] [--version] module_name[module_version]
+ marc-count [-h] [--version] marc_xml_file
 
 =head1 DESCRIPTION
 
-Vision of this module is:
-
- * intuitive name for script which fetching module from CPAN
- * intuitive caching mechanism (switch for source)
- * simple dependencies to modules, which doing one thing (not CPAN module) SIC!
- * testable and tested distribution
+It supports MARC XML files now.
 
 =head1 ARGUMENTS
 
@@ -45,43 +40,25 @@ Vision of this module is:
 
 =item * C<-h>
 
- Print help.
+Print help.
 
 =item * C<--version>
 
- Print version of script.
+Print version of script.
 
-=item * C<module_name>
+=item * C<marc_xml_file>
 
- Perl module name.
- e.g. App::Pod::Example
-
-=item * C<module_version>
-
-Perl module version.
-There are some posibilities how to define:
-
- @module_version (e.g. @1.23)
- - Define exact module version.
-
- ~module_version (e.g. ~1.23)
- - Define version and later.
-
- ~"== module_version" (e.g. ~"== 1.23")
- - Define exact module version.
-
- ~">= module_version_min, < module_version_max" (e.g. ~">= 1.23, < 2.00")
- - Define limit. (e.g. last version in 1.xx branch)
+MARC XML file name.
 
 =back
 
 =head1 EXAMPLE
 
- marc-xml2json __MARC.xml__
+ marc-count __MARC.xml__
 
 =head1 REPOSITORY
 
-L<https://github.com/michal-josef-spacek/App-MARC-List>
+L<https://github.com/michal-josef-spacek/App-MARC-Count>
 
 =head1 AUTHOR
 
