@@ -1,9 +1,10 @@
 TODO
 ====
 1. Remove line number and file from warning from die.
-2. Test for run.
 3. Support for JSON files.
 4.
 
 Applied
 =======
+2. Test for run.
+OK [20220516] skim
