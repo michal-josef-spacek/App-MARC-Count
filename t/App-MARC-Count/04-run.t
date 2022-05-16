@@ -5,7 +5,7 @@ use App::MARC::Count;
 use English;
 use File::Object;
 use File::Spec::Functions qw(abs2rel);
-use Test::More 'tests' => 3;
+use Test::More 'tests' => 4;
 use Test::NoWarnings;
 use Test::Output;
 
@@ -33,6 +33,23 @@ stderr_is(
 	},
 	$right_ret,
 	'Run help.',
+);
+
+# Test.
+@ARGV = ();
+$right_ret = <<"END";
+Usage: $script [-h] [--version] marc_xml_file
+	-h		Print help.
+	--version	Print version.
+	marc_xml_file	MARC XML file.
+END
+stderr_is(
+	sub {
+		App::MARC::Count->new->run;
+		return;
+	},
+	$right_ret,
+	'Run help (no MARC XML file).',
 );
 
 # Test.
