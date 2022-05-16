@@ -1,10 +1,13 @@
 TODO
 ====
 1. Remove line number and file from warning from die.
-3. Support for JSON files.
 4.
 
 Applied
 =======
 2. Test for run.
 OK [20220516] skim
+
+3. Support for JSON files.
+This is not official MARC JSON file, we don't need.
+NONE [20220516] skim
