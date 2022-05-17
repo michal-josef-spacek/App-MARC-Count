@@ -5,7 +5,7 @@ use App::MARC::Count;
 use English;
 use File::Object;
 use File::Spec::Functions qw(abs2rel);
-use Test::More 'tests' => 4;
+use Test::More 'tests' => 5;
 use Test::NoWarnings;
 use Test::Output;
 
@@ -63,4 +63,17 @@ stdout_is(
 	},
 	"3\n",
 	'Run count for MARC XML file with 3 records.',
+);
+
+# Test.
+@ARGV = (
+	$data_dir->file('ex2.xml')->s,
+);
+combined_like(
+	sub {
+		App::MARC::Count->new->run;
+		return;
+	},
+	qr{^Cannot process '1' record\. Error: Field 300 must have indicators \(use ' ' for empty indicators\)},
+	'Run count for MARC XML file with 1 records (with error).',
 );
