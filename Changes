@@ -1,4 +1,5 @@
 0.03
+ - Update Module::Install to 1.21 version.
 
 0.02 2022-05-17T11:12:34+02:00
  - Add test with error.
