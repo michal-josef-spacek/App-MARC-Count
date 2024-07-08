@@ -9,23 +9,14 @@ use Test::More 'tests' => 5;
 use Test::NoWarnings;
 use Test::Output;
 
+# Data dir.
 my $data_dir = File::Object->new->up->dir('data');
-my $script = abs2rel(File::Object->new->file('04-run.t')->s);
-# XXX Hack for missing abs2rel on Windows.
-if ($OSNAME eq 'MSWin32') {
-	$script =~ s/\\/\//msg;
-}
 
 # Test.
 @ARGV = (
 	'-h',
 );
-my $right_ret = <<"END";
-Usage: $script [-h] [--version] marc_xml_file
-	-h		Print help.
-	--version	Print version.
-	marc_xml_file	MARC XML file.
-END
+my $right_ret = help();
 stderr_is(
 	sub {
 		App::MARC::Count->new->run;
@@ -37,12 +28,7 @@ stderr_is(
 
 # Test.
 @ARGV = ();
-$right_ret = <<"END";
-Usage: $script [-h] [--version] marc_xml_file
-	-h		Print help.
-	--version	Print version.
-	marc_xml_file	MARC XML file.
-END
+$right_ret = help();
 stderr_is(
 	sub {
 		App::MARC::Count->new->run;
@@ -77,3 +63,19 @@ combined_like(
 	qr{^Cannot process '1' record\. Error: Field 300 must have indicators \(use ' ' for empty indicators\)},
 	'Run count for MARC XML file with 1 records (with error).',
 );
+
+sub help {
+	my $script = abs2rel(File::Object->new->file('04-run.t')->s);
+	# XXX Hack for missing abs2rel on Windows.
+	if ($OSNAME eq 'MSWin32') {
+		$script =~ s/\\/\//msg;
+	}
+	my $help = <<"END";
+Usage: $script [-h] [--version] marc_xml_file
+	-h		Print help.
+	--version	Print version.
+	marc_xml_file	MARC XML file.
+END
+
+	return $help;
+}
