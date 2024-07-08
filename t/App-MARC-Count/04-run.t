@@ -5,9 +5,10 @@ use App::MARC::Count;
 use English;
 use File::Object;
 use File::Spec::Functions qw(abs2rel);
-use Test::More 'tests' => 5;
+use Test::More 'tests' => 7;
 use Test::NoWarnings;
 use Test::Output;
+use Test::Warn 0.31;
 
 # Data dir.
 my $data_dir = File::Object->new->up->dir('data');
@@ -36,6 +37,21 @@ stderr_is(
 	},
 	$right_ret,
 	'Run help (no MARC XML file).',
+);
+
+# Test.
+@ARGV = (
+	'-x',
+);
+$right_ret = help();
+stderr_is(
+	sub {
+		warning_is { App::MARC::Count->new->run; } "Unknown option: x\n",
+			'Warning about bad argument';
+		return;
+	},
+	$right_ret,
+	'Run help (-x - bad option).',
 );
 
 # Test.
