@@ -1,4 +1,4 @@
-0.03
+0.03 2024-07-08T19:24:37+02:00
  - Add test for run().
  - Rename example file to better name.
  - Rewrite arguments process to more intuitive way.
