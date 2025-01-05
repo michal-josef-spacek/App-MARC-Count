@@ -1,7 +1,8 @@
 TODO
 ====
 1. Remove line number and file from warning from die.
-4.
+4. Verbose mode for counting. Each record one '.'.
+5.
 
 Applied
 =======
