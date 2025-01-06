@@ -63,7 +63,7 @@ stdout_is(
 		App::MARC::Count->new->run;
 		return;
 	},
-	"3\n",
+	"2\n",
 	'Run count for MARC XML file with 3 records.',
 );
 

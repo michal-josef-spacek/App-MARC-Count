@@ -47,9 +47,10 @@ sub run {
 
 	my $marc_file = MARC::File::XML->in($self->{'_marc_xml_file'});
 	my $ret_hr = {};
-	my $num = 1;
+	my $num = 0;
 	my $previous_record;
 	while (1) {
+		$num++;
 		my $record = eval {
 			$marc_file->next;
 		};
@@ -64,11 +65,10 @@ sub run {
 			next;
 		}
 		if (! defined $record) {
+			$num--;
 			last;
 		}
 		$previous_record = $record;
-
-		$num++;
 	}
 
 	# Print out.
