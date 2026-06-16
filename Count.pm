@@ -120,7 +120,9 @@ Returns 1 for error, 0 for success.
          From Class::Utils::set_params():
                  Unknown parameter '%s'.
 
-=head1 EXAMPLE
+=head1 EXAMPLES
+
+=head2 EXAMPLE
 
 =for comment filename=example_count.pl
 

@@ -1,5 +1,6 @@
 0.05
  - Remove XXX from tests.
+ - Rewrite doc to use =head1 EXAMPLES.
  - Sort modules in EXAMPLE section in doc.
  - Update copyright years.
 
